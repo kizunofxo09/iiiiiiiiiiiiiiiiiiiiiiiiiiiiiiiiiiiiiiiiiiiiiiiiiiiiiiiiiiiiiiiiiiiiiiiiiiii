@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>IIIIIIIIIIIIIIIIIIII</title>
+  <style>
+    body {
+      background-color: white;
+      color: black;
+      font-family: monospace;
+      white-space: pre-wrap;
+      font-size: 16px;
+      padding: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="i-container">Carregando os I...</div>
+
+  <script>
+    const container = document.getElementById('i-container');
+    let iString = '';
+    const chunkSize = 10000;
+    const total = 1000000;
+    let current = 0;
+
+    function addI() {
+      if (current >= total) return;
+      iString += 'I'.repeat(chunkSize);
+      current += chunkSize;
+      container.textContent = iString;
+      requestAnimationFrame(addI);
+    }
+
+    addI();
+  </script>
+</body>
+</html>
